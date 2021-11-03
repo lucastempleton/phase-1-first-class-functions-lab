@@ -1,11 +1,18 @@
 // Code your solution in this file!
-const returnFirstTwoDrivers = (function(){
-    return ["Sally", "Bob"]
+// const returnFirstTwoDrivers = (function(){
+//     return ["Sally", "Bob"]
     
-})
-const returnLastTwoDrivers = (function(){
-    return ["Freddy", "Claudia"]
-})
+// })
+// const returnLastTwoDrivers = (function(){
+//     return ["Freddy", "Claudia"]
+// })
+const returnFirstTwoDrivers = function(drivers){
+    return drivers.slice(0,2);
+}
+const returnLastTwoDrivers = function(drivers){
+    return drivers.slice(-2);
+}
+
 const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers]
     
 
@@ -36,12 +43,21 @@ function createFareMultiplier(func){
         }
 }
 
+// function selectDifferentDrivers (arrayOfDrivers, f){
+//     if (f === returnFirstTwoDrivers){
+//         arrayOfDrivers = returnFirstTwoDrivers();
+//     }
+//     else if (f === returnLastTwoDrivers){
+//         arrayOfDrivers =  returnLastTwoDrivers();
+//     }
+//     return arrayOfDrivers
+// }
 function selectDifferentDrivers (arrayOfDrivers, f){
     if (f === returnFirstTwoDrivers){
-        arrayOfDrivers = returnFirstTwoDrivers();
+        arrayOfDrivers = returnFirstTwoDrivers(arrayOfDrivers);
     }
     else if (f === returnLastTwoDrivers){
-        arrayOfDrivers =  returnLastTwoDrivers();
+        arrayOfDrivers =  returnLastTwoDrivers(arrayOfDrivers);
     }
     return arrayOfDrivers
 }
